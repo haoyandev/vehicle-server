@@ -10,7 +10,7 @@ export class UserService {
   }
   async getUsers(_num: number, _page: number) {
     return this.prismaService.users.findMany({
-      select: { username: true, telephone: true },
+      select: { uid: true, username: true, telephone: true },
       take: _num,
       skip: (_page - 1) * _num,
     });
